@@ -27,15 +27,16 @@ tfidf_matrix = tfidf.fit_transform(books_df['Synopsis'])
 cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
 
 def get_recommendations(title, cosine_sim=cosine_sim):
-    # Get index of the book
+
+ # Get index of the book
     idx = books_df[books_df['Title'] == title].index[0]
-    # Get pairwise similarity scores of the book
+ # Get pairwise similarity scores of the book
     sim_scores = list(enumerate(cosine_sim[idx]))
-    # Sort books based on similarity scores
+ # Sort books based on similarity scores
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    # Get top 5 recommendations
+  # Get top 5 recommendations
     top_similar_books = sim_scores[1:6]
-    # Get titles of recommended books
+ # Get titles of recommended books
     recommended_books = [books_df.iloc[i[0]]['Title'] for i in top_similar_books]
     return recommended_books
 
