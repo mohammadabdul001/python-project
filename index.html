@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+    <style>
+        body {
+            background-color: rgb(25, 236, 240);
+          }
+          
+          h1 {
+            color: rgb(255, 4, 4);
+            text-align: center;
+          }
+
+          button {
+            color: rgb(236, 170, 29);
+            text-align: center;
+          }
+
+         label {
+            color: rgb(34, 21, 218);
+            text-align: center;
+         }
+          p {
+            font-family: verdana;
+            font-size: 20px;
+          }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Book Recommendation System</h1>
+    <a href="index.html">
+  </a>
+    <form action="/recommendations" method="POST">
+        <label for="book_title">Enter Book Title:</label>
+        <input type="text" id="book_title" name="book_title" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>
